@@ -96,7 +96,7 @@ class App extends Component {
             </Row>
          </Form>
       </div>
-      <div className="output">
+      <div className="content">
          <Form>
             <Form.Row>
               <Form.Group as={Col}>
