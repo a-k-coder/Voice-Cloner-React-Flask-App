@@ -94,8 +94,8 @@ class App extends Component {
                 </Button>
               </Col>
             </Row>
-            <Row>
-            </Row>
+         </Form>
+         <Form>
             <Row>
               <Col>
                 <Button
