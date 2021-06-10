@@ -68,7 +68,7 @@ class App extends Component {
     return (
       <Container>
         <div>
-          <h1 className="title">ML React App</h1>
+          <h1 className="title">Voice Cloner</h1>
         </div>
         <div className="content">
           <Form>
@@ -93,6 +93,8 @@ class App extends Component {
                   { isLoading ? 'Uploading' : 'Upload' }
                 </Button>
               </Col>
+            </Row>
+            <Row>
             </Row>
             <Row>
               <Col>
