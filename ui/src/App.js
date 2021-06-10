@@ -15,11 +15,7 @@ class App extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        textfield1: '',
-        textfield2: '',
-        select1: 1,
-        select2: 1,
-        select3: 1
+        textfield1: ''
       },
       result: ""
     };
@@ -35,7 +31,7 @@ class App extends Component {
     });
   }
 
-  handlePredictClick = (event) => {
+  handleUploadClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
     fetch('http://127.0.0.1:5000/prediction/', 
@@ -56,7 +52,7 @@ class App extends Component {
       });
   }
 
-  handleCancelClick = (event) => {
+  handleDownloadClick = (event) => {
     this.setState({ result: "" });
   }
 
@@ -89,7 +85,7 @@ class App extends Component {
                   block
                   variant="success"
                   disabled={isLoading}
-                  onClick={!isLoading ? this.handlePredictClick : null}>
+                  onClick={!isLoading ? this.handleUploadClick : null}>
                   { isLoading ? 'Uploading' : 'Upload voice sample' }
                 </Button>
               </Col>
@@ -104,7 +100,7 @@ class App extends Component {
                   block
                   variant="danger"
                   disabled={isLoading}
-                  onClick={this.handleCancelClick}>
+                  onClick={this.handleDownloadClick}>
                   Speak
                 </Button>
               </Form.Group>
