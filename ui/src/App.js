@@ -74,21 +74,12 @@ class App extends Component {
           <Form>
             <Form.Row>
               <Form.Group as={Col}>
-                <Form.Label>Text Field 1</Form.Label>
+                <Form.Label>Type something to say</Form.Label>
                 <Form.Control 
                   type="text" 
-                  placeholder="Text Field 1" 
+                  placeholder = "Up to 500 characters"
                   name="textfield1"
                   value={formData.textfield1}
-                  onChange={this.handleChange} />
-              </Form.Group>
-              <Form.Group as={Col}>
-                <Form.Label>Text Field 2</Form.Label>
-                <Form.Control 
-                  type="text" 
-                  placeholder="Text Field 2" 
-                  name="textfield2"
-                  value={formData.textfield2}
                   onChange={this.handleChange} />
               </Form.Group>
             </Form.Row>
