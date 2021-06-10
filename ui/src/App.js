@@ -90,16 +90,16 @@ class App extends Component {
                   variant="success"
                   disabled={isLoading}
                   onClick={!isLoading ? this.handlePredictClick : null}>
-                  { isLoading ? 'Uploading' : 'Upload' }
+                  { isLoading ? 'Uploading' : 'Upload voice sample' }
                 </Button>
               </Col>
             </Row>
          </Form>
       </div>
-      <div>
+      <div className="output">
          <Form>
-            <Row>
-              <Col>
+            <Form.Row>
+              <Form.Group as={Col}>
                 <Button
                   block
                   variant="danger"
@@ -107,8 +107,8 @@ class App extends Component {
                   onClick={this.handleCancelClick}>
                   Speak
                 </Button>
-              </Col>
-            </Row>
+              </Form.Group>
+            </Form.Row>
           </Form>
           {result === "" ? null :
             (<Row>
