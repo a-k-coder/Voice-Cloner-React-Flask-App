@@ -34,7 +34,7 @@ class App extends Component {
   handleSubmitTextClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/print/', 
+    fetch('http://127.0.0.1:5000/voicecloner/print', 
       {
         headers: {
           'Accept': 'application/json',
@@ -55,7 +55,7 @@ class App extends Component {
   handleUploadClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/upload/', 
+    fetch('http://127.0.0.1:5000/voicecloner/upload', 
       {
         headers: {
           'Accept': 'application/json',
