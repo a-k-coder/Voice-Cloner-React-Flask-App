@@ -52,26 +52,26 @@ class App extends Component {
       });
   }
   
-//   handleUploadClick = (event) => {
-//     const formData = this.state.formData;
-//     this.setState({ isLoading: true });
-//     fetch('http://127.0.0.1:5000/upload/', 
-//       {
-//         headers: {
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json'
-//         },
-//         method: 'POST',
-//         body: JSON.stringify(formData)
-//       })
-//       .then(response => response.json())
-//       .then(response => {
-//         this.setState({
-//           result: response.result,
-//           isLoading: false
-//         });
-//       });
-//   }
+  handleUploadClick = (event) => {
+    const formData = this.state.formData;
+    this.setState({ isLoading: true });
+    fetch('http://127.0.0.1:5000/upload/', 
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          result: response.result,
+          isLoading: false
+        });
+      });
+  }
 
 
   handleDownloadClick = (event) => {
@@ -109,6 +109,17 @@ class App extends Component {
                   disabled={isLoading}
                   onClick={!isLoading ? this.handleSubmitTextClick : null}>
                   { isLoading ? 'Submitting' : 'Submit text' }
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Button
+                  block
+                  variant="success"
+                  disabled={isLoading}
+                  onClick={!isLoading ? this.handleUploadClick : null}>
+                  { isLoading ? 'Uploading' : 'Upload voice sample' }
                 </Button>
               </Col>
             </Row>
