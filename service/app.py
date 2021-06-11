@@ -36,7 +36,7 @@ class MainClass(Resource):
 			response = jsonify({
 				"statusCode": 200,
 				"status": "Print complete",
-				"result": "Print: " + str(data)
+				"result": "Text: " + str(data)
 				})
 			response.headers.add('Access-Control-Allow-Origin', '*')
 			return response
