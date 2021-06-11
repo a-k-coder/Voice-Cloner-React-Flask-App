@@ -34,7 +34,7 @@ class App extends Component {
   handleUploadClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/prediction/', 
+    fetch('http://127.0.0.1:5000/print/', 
       {
         headers: {
           'Accept': 'application/json',
