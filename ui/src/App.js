@@ -134,7 +134,7 @@ class App extends Component {
                   variant="danger"
                   disabled={isLoading}
                   onClick={this.handleDownloadClick}>
-                  Speak
+                  Download
                 </Button>
               </Form.Group>
             </Form.Row>
