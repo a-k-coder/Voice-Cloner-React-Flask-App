@@ -5,27 +5,15 @@ from sklearn.externals import joblib
 flask_app = Flask(__name__)
 app = Api(app = flask_app, 
 		  version = "1.0", 
-		  title = "ML React App", 
-		  description = "Predict results using a trained model")
+		  title = "Voice Cloner", 
+		  description = "Print text input")
 
-name_space = app.namespace('prediction', description='Prediction APIs')
+name_space = app.namespace('print', description='Print')
 
-model = app.model('Prediction params', 
+model = app.model('Print params', 
 				  {'textField1': fields.String(required = True, 
 				  							   description="Text Field 1", 
-    					  				 	   help="Text Field 1 cannot be blank"),
-				  'textField2': fields.String(required = True, 
-				  							   description="Text Field 2", 
-    					  				 	   help="Text Field 2 cannot be blank"),
-				  'select1': fields.Integer(required = True, 
-				  							description="Select 1", 
-    					  				 	help="Select 1 cannot be blank"),
-				  'select2': fields.Integer(required = True, 
-				  							description="Select 2", 
-    					  				 	help="Select 2 cannot be blank"),
-				  'select3': fields.Integer(required = True, 
-				  							description="Select 3", 
-    					  				 	help="Select 3 cannot be blank")})
+    					  				 	   help="Text Field 1 cannot be blank")})
 
 # classifier = joblib.load('classifier.joblib')
 
@@ -47,8 +35,8 @@ class MainClass(Resource):
 			# prediction = classifier.predict(data)
 			response = jsonify({
 				"statusCode": 200,
-				"status": "Prediction made",
-				"result": "Prediction: " + str(data)
+				"status": "Print complete",
+				"result": "Print: " + str(data)
 				})
 			response.headers.add('Access-Control-Allow-Origin', '*')
 			return response
