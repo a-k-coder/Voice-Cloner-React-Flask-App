@@ -5,10 +5,10 @@ from sklearn.externals import joblib
 flask_app = Flask(__name__)
 app = Api(app = flask_app, 
 		  version = "1.0", 
-		  title = "Voice Cloner", 
-		  description = "Print text input")
+		  title = "Voice Cloner Flask API", 
+		  description = "Clone your own voice")
 
-name_space = app.namespace('voicecloner', description='Print')
+name_space = app.namespace('voicecloner', description='hi')
 
 model = app.model('Print params', 
 				  {'textField1': fields.String(required = True, 
