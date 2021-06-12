@@ -82,6 +82,9 @@ class App extends Component {
     const isLoading = this.state.isLoading;
     const formData = this.state.formData;
     const result = this.state.result;
+    
+    let path = 'C:\Users\Aruna\Desktop\Springboard\Curriculum\21\21.5\ML-React-App-Template\ML-React-App-Template\ui\resources\output\cartoon-birds-2_daniel-simion.mp3'
+    let audio = new Audio(path);
 
     return (
       <Container>
