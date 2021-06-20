@@ -157,7 +157,7 @@ class App extends Component {
               <Form.Group as={Col}>
                 <Button id="audio-button" 
                   block
-                  onClick={() => audio.play}>
+                  onClick={() => audio.play()}>
                   Play sound
                 </Button>
               </Form.Group>
