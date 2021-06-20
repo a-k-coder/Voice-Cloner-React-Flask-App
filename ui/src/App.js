@@ -151,7 +151,7 @@ class App extends Component {
             </Row>)
           }
         </div>
-        <div className="audioPlayer">
+        <div className="content">
           <Form>
             <Form.Row>
               <Form.Group as={Col}>
