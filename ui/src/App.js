@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
+import soundfile from 'C:\Users\Aruna\Desktop\Springboard\Curriculum\21\21.5\ML-React-App-Template\ML-React-App-Template\ui\resources\output\cartoon-birds-2_daniel-simion.mp3'
 
 class App extends Component {
 
@@ -151,6 +152,11 @@ class App extends Component {
           }
         </div>
       </Container>
+        audioPlayer = (
+            <div className="count-number-equivelance-audioPlayer">
+                <button id="equivalence-audio-button" onClick={() => audio.play()}>Soundclip!</button>
+            </div>
+        ); 
     );
   }
 }
