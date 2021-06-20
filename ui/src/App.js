@@ -156,6 +156,7 @@ class App extends Component {
             <Form.Row>
               <Form.Group as={Col}>
                 <Button id="audio-button" 
+                  block
                   onClick={() => null}>
                   Play sound
                 </Button>
@@ -163,7 +164,6 @@ class App extends Component {
             </Form.Row>
           </Form>
         </div>
-        );
       </Container> 
     );
   }
