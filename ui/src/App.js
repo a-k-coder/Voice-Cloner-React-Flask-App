@@ -84,8 +84,8 @@ class App extends Component {
     const formData = this.state.formData;
     const result = this.state.result;
     
-    let path = 'C:\Users\Aruna\Desktop\Springboard\Curriculum\21\21.5\ML-React-App-Template\ML-React-App-Template\ui\resources\output\cartoon-birds-2_daniel-simion.mp3'
-    let audio = new Audio(path);
+//     let path = 'C:\Users\Aruna\Desktop\Springboard\Curriculum\21\21.5\ML-React-App-Template\ML-React-App-Template\ui\resources\output\cartoon-birds-2_daniel-simion.mp3'
+//     let audio = new Audio(path);
 
     return (
       <Container>
@@ -151,12 +151,19 @@ class App extends Component {
             </Row>)
           }
         </div>
-      </Container>
-        audioPlayer = (
-            <div className="count-number-equivelance-audioPlayer">
-                <button id="equivalence-audio-button" onClick={() => audio.play()}>Soundclip!</button>
-            </div>
-        ); 
+        <div className="audioPlayer">
+          <Form>
+            <Form.Row>
+              <Button id="audio-button" 
+                onClick={() => null}>
+//                 audio.play()}>
+                Soundclip!
+              </Button>
+            </Form.Row>
+          </Form>
+        </div>
+        );
+      </Container> 
     );
   }
 }
