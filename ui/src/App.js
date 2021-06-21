@@ -85,8 +85,8 @@ class App extends Component {
     const formData = this.state.formData;
     const result = this.state.result;
     
-    var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
-    var audio = new Audio(path);
+//     var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
+    var audio = new Audio(soundfile);
 
     return (
       <Container>
@@ -158,20 +158,20 @@ class App extends Component {
               <Form.Group as={Col}>
                 <Button id="audio-button" 
                   block
-                  onClick={ 
-                  <Sound
-                  url={soundfile}
-                  playStatus={Sound.status.PLAYING}
-                  onLoading={this.handleSongLoading}
-                  onPlaying={this.handleSongPlaying}
-                  onFinishedPlaying={this.handleSongFinishedPlaying}
-                  />
+                  onClick={() => audio.play()
                   }>
                   Play sound
                 </Button>
               </Form.Group>
             </Form.Row>
           </Form>
+          <Sound
+          url={soundfile}
+          playStatus={Sound.status.PLAYING}
+          onLoading={this.handleSongLoading}
+          onPlaying={this.handleSongPlaying}
+          onFinishedPlaying={this.handleSongFinishedPlaying}
+          />
         </div>
       </Container> 
     );
