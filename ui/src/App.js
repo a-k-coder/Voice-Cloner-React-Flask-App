@@ -87,7 +87,7 @@ class App extends Component {
     
 //     var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
     var audio = new Audio();
-    audio.src='C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
+    audio.src='.\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
 
     return (
       <Container>
