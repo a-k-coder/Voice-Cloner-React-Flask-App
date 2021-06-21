@@ -86,7 +86,8 @@ class App extends Component {
     const result = this.state.result;
     
 //     var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\test1.mp3';
-    var path = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+//     var path = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+    var path = 'https://drive.google.com/file/d/1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0/view';
     var audio = new Audio(path);
     
 
