@@ -158,7 +158,7 @@ class App extends Component {
               <Form.Group as={Col}>
                 <Button id="audio-button" 
                   block
-                  onClick={() => 
+                  onClick={ 
                   <Sound
                   url={soundfile}
                   playStatus={Sound.status.PLAYING}
