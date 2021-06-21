@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
-// import soundfile from 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
+// import soundfile from 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.wav';
 // import Sound from 'react-sound';
 
 class App extends Component {
@@ -85,9 +85,9 @@ class App extends Component {
     const formData = this.state.formData;
     const result = this.state.result;
     
-//     var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
-    var audio = new Audio();
-    audio.src='C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.mp3';
+    var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\cartoon-birds-2_daniel-simion.wav';
+    var audio = new Audio(path);
+    
 
     return (
       <Container>
