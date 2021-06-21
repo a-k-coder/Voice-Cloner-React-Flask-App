@@ -165,13 +165,6 @@ class App extends Component {
               </Form.Group>
             </Form.Row>
           </Form>
-          <Sound
-          url={soundfile}
-          playStatus={Sound.status.PLAYING}
-          onLoading={this.handleSongLoading}
-          onPlaying={this.handleSongPlaying}
-          onFinishedPlaying={this.handleSongFinishedPlaying}
-          />
         </div>
       </Container> 
     );
