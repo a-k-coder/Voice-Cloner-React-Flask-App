@@ -158,7 +158,15 @@ class App extends Component {
               <Form.Group as={Col}>
                 <Button id="audio-button" 
                   block
-                  onClick={() => audio.play()}>
+                  onClick={() => 
+                  <Sound
+                  url={soundfile}
+                  playStatus={Sound.status.PLAYING}
+                  onLoading={this.handleSongLoading}
+                  onPlaying={this.handleSongPlaying}
+                  onFinishedPlaying={this.handleSongFinishedPlaying}
+                  />
+                  }>
                   Play sound
                 </Button>
               </Form.Group>
