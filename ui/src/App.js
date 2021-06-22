@@ -79,17 +79,23 @@ class App extends Component {
   handleDownloadClick = (event) => {
     this.setState({ result: "" });
   }
+  
+  handlePlaySound = (event) => {
+    let path = 'https://docs.google.com/uc?export=download&id=1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0'
+    let audio = new Audio(path);
+    audio.play()
+  }
 
   render() {
     const isLoading = this.state.isLoading;
     const formData = this.state.formData;
     const result = this.state.result;
     
+    
 //     var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\test1.mp3';
 //     var path = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
 //     var path = 'https://drive.google.com/file/d/1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0/view';
-    var path = 'https://docs.google.com/uc?export=download&id=1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0'
-    var audio = new Audio(path);
+    
     
 
     return (
@@ -162,8 +168,7 @@ class App extends Component {
               <Form.Group as={Col}>
                 <Button id="audio-button" 
                   block
-                  onClick={() => audio.play()
-                  }>
+                  onClick={this.handlePlaySound}>
                   Play sound
                 </Button>
               </Form.Group>
