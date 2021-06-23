@@ -130,7 +130,7 @@ class App extends Component {
                 <input 
                   type="file" 
                   name="inputvoicefile"
-                  onChange={} />
+                  onChange={this.handleChange} />
                 <Button
                   block
                   variant="success"
