@@ -108,7 +108,7 @@ class App extends Component {
           <Form>
             <Form.Row>
               <Form.Group as={Col}>
-                <Form.Label>Type something to say</Form.Label>
+                <Form.Label>1. Type something to say</Form.Label>
                 <Form.Control 
                   type="text" 
                   placeholder = "Up to 500 characters"
@@ -126,12 +126,11 @@ class App extends Component {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col}>
-                <Form.Control 
-                  type="text" 
-                  placeholder = "characters"
-                  name="textfield2"
-                  value={formData.textfield2}
-                  onChange={this.handleChange} />
+                <Form.Label>2. Upload voice sample to be cloned.</Form.Label>
+                <input 
+                  type="file" 
+                  name="inputvoicefile"
+                  onChange={} />
                 <Button
                   block
                   variant="success"
