@@ -16,6 +16,7 @@ class App extends Component {
 
     this.state = {
       isLoading: false,
+      fileToBeSent: "",
       formData: {
         textfield1: '',
         textfield2: ''
