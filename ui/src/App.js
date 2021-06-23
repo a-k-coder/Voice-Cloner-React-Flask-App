@@ -17,7 +17,8 @@ class App extends Component {
     this.state = {
       isLoading: false,
       formData: {
-        textfield1: ''
+        textfield1: '',
+        textfield2: ''
       },
       result: ""
     };
@@ -116,8 +117,14 @@ class App extends Component {
                   onChange={this.handleChange} />
               </Form.Group>
             </Form.Row>
-            <Row>
-              <Col>
+            <Form.Row>
+              <Form.Group as={Col}>
+                <Form.Control 
+                  type="text" 
+                  placeholder = "characters"
+                  name="textfield2"
+                  value={formData.textfield2}
+                  onChange={this.handleChange} />
                 <Button
                   block
                   variant="success"
@@ -125,8 +132,8 @@ class App extends Component {
                   onClick={!isLoading ? this.handleSubmitTextClick : null}>
                   { isLoading ? 'Submitting' : 'Submit text' }
                 </Button>
-              </Col>
-            </Row>
+              </Form.Group>
+            </Form.Row>
             <Row>
               <Col>
                 <Button
