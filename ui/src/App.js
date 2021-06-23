@@ -115,6 +115,13 @@ class App extends Component {
                   name="textfield1"
                   value={formData.textfield1}
                   onChange={this.handleChange} />
+                <Button
+                  block
+                  variant="success"
+                  disabled={isLoading}
+                  onClick={!isLoading ? this.handleSubmitTextClick : null}>
+                  { isLoading ? 'Submitting' : 'Submit text' }
+                </Button>
               </Form.Group>
             </Form.Row>
             <Form.Row>
@@ -129,23 +136,12 @@ class App extends Component {
                   block
                   variant="success"
                   disabled={isLoading}
-                  onClick={!isLoading ? this.handleSubmitTextClick : null}>
-                  { isLoading ? 'Submitting' : 'Submit text' }
-                </Button>
-              </Form.Group>
-            </Form.Row>
-            <Row>
-              <Col>
-                <Button
-                  block
-                  variant="success"
-                  disabled={isLoading}
                   onClick={!isLoading ? this.handleUploadClick : null}>
                   { isLoading ? 'Uploading' : 'Upload voice sample' }
                 </Button>
-              </Col>
-            </Row>
-         </Form>
+              </Form.Group>
+            </Form.Row>
+          </Form>
       </div>
       <div className="content">
          <Form>
