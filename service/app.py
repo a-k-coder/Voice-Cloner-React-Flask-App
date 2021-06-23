@@ -76,3 +76,34 @@ class MainClass(Resource):
 				"status": "Could not make prediction",
 				"error": str(error)
 			})
+		
+@name_space.route("/saveaudio")
+class MainClass(Resource):
+
+	def options(self):
+		response = make_response()
+		response.headers.add("Access-Control-Allow-Origin", "*")
+		response.headers.add('Access-Control-Allow-Headers', "*")
+		response.headers.add('Access-Control-Allow-Methods', "*")
+		return response
+
+	@app.expect(model)		
+	def post(self):
+		try: 
+			formData = request.json
+			data = [val for val in formData.values()]
+			# prediction = classifier.predict(data)
+			response = jsonify({
+				"statusCode": 200,
+				"status": "Print complete",
+				"result": "Uploaded " + str(data)
+				})
+			response.headers.add('Access-Control-Allow-Origin', '*')
+			return response
+		except Exception as error:
+			return jsonify({
+				"statusCode": 500,
+				"status": "Could not save audio.",
+				"error": str(error)
+			})
+
