@@ -76,6 +76,18 @@ class App extends Component {
       });
   }
 
+  uploadFile(e) {
+  e.preventDefault();
+  let file = this.state.fileToBeSent;
+  const formData = new FormData();
+
+  formData.append("file", file);
+
+  axios
+    .post("/api/upload", formData)
+    .then(res => console.log(res))
+    .catch(err => console.warn(err));
+  }
 
   handleDownloadClick = (event) => {
     this.setState({ result: "" });
@@ -135,7 +147,7 @@ class App extends Component {
                   block
                   variant="success"
                   disabled={isLoading}
-                  onClick={!isLoading ? this.handleUploadClick : null}>
+                  onClick={!isLoading ? this.uploadFile : null}>
                   { isLoading ? 'Uploading' : 'Upload voice sample' }
                 </Button>
               </Form.Group>
