@@ -97,6 +97,7 @@ class MainClass(Resource):
 			if file.filename == '':
 # 				flash('No selected file')
 				print('PRINT 3: No selected file')
+				print("PRINT 3: request.url :", request.url)
 				return redirect(request.url)
 			if file and allowed_file(file.filename):
 				print("PRINT 4: file and allowed_file(file.filename): OK")
@@ -110,7 +111,7 @@ class MainClass(Resource):
 				"result": "Upload complete"
 				})
 				response.headers.add('Access-Control-Allow-Origin', '*')
-			return redirect(url_for('download_file', name=filename))
+# 			return redirect(url_for('download_file', name=filename))
 		return response
 # 		'''
 # 		<!doctype html>
