@@ -52,7 +52,7 @@ class MainClass(Resource):
 				"error": str(error)
 			})
 
-@name_space.route("/upload", methods = ['POST','GET'])
+@name_space.route("/upload")
 class MainClass(Resource):
 	
 	def allowed_file(filename):
