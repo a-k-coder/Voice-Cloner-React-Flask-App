@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
-import axios from 'axios';
+// import axios from 'axios';
 // import soundfile from 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\test1.mp3';
 // import Sound from 'react-sound';
 
@@ -62,16 +62,17 @@ class App extends Component {
   }
   
   handleUploadClick = (event) => {
-    const formData = this.state.formData;
+    let file = this.state.fileToBeSent;
+    const formData = new FormData();
+    formData.append("file", file);
     this.setState({ isLoading: true });
     fetch('http://127.0.0.1:5000/voicecloner/upload', 
       {
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          "Access-Control-Allow-Origin": "*",
         },
         method: 'POST',
-        body: JSON.stringify(formData)
+        body: formData
       })
       .then(response => response.json())
       .then(response => {
@@ -82,24 +83,24 @@ class App extends Component {
       });
   }
 
-  uploadFile = (event) => {
-  event.preventDefault();
-  let file = this.state.fileToBeSent;
-  const formData = new FormData();
-  const headers = {
-  "Access-Control-Allow-Origin": "*",
-};
+//   uploadFile = (event) => {
+//   event.preventDefault();
+//   let file = this.state.fileToBeSent;
+//   const formData = new FormData();
+//   const headers = {
+//   "Access-Control-Allow-Origin": "*",
+//   };
 
-  formData.append("file", file);
+//   formData.append("file", file);
      
-  axios
-    .post("http://127.0.0.1:5000/voicecloner/upload", formData, 
-          {
-            headers: headers
-          })
-    .then(res => console.log(res))
-    .catch(err => console.warn(err));
-  }
+//   axios
+//     .post("http://127.0.0.1:5000/voicecloner/upload", formData, 
+//           {
+//             headers: headers
+//           })
+//     .then(res => console.log(res))
+//     .catch(err => console.warn(err));
+//   }
 
   handleDownloadClick = (event) => {
     this.setState({ result: "" });
@@ -159,7 +160,7 @@ class App extends Component {
                   block
                   variant="success"
                   disabled={isLoading}
-                  onClick={!isLoading ? this.uploadFile : null}>
+                  onClick={!isLoading ? this.handleUploadClick : null}>
                   { isLoading ? 'Uploading' : 'Upload voice sample' }
                 </Button>
               </Form.Group>
