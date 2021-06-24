@@ -9,7 +9,7 @@ app = Api(app = flask_app,
 		  version = "1.0", 
 		  title = "Voice Cloner Flask API", 
 		  description = "Clone your own voice")
-
+app.secret_key= "QWERTYUIOP"
 name_space = app.namespace('voicecloner', description='hi')
 
 model = app.model('Print params', 
