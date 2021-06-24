@@ -78,7 +78,7 @@ class MainClass(Resource):
 # 				"status": "Could not make prediction",
 # 				"error": str(error)
 # 			})
-	def upload_file():
+	def post(self):
 		if request.method == 'POST':
 			# check if the post request has the file part
 			if 'file' not in request.files:
