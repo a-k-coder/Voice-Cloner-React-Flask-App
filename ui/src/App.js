@@ -37,7 +37,7 @@ class App extends Component {
   }
   
   onChangeFile = (event) => {
-    this.setState({ fileToBeSent: event.target.files });
+    this.setState({ fileToBeSent: event.target.files[0]});
   }
 
   handleSubmitTextClick = (event) => {
@@ -69,7 +69,7 @@ class App extends Component {
     fetch('http://127.0.0.1:5000/voicecloner/upload', 
       {
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          'Access-Control-Allow-Origin': '*'
         },
         method: 'POST',
         body: formData
