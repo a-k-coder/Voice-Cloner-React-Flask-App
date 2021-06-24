@@ -82,14 +82,14 @@ class MainClass(Resource):
 		if request.method == 'POST':
 			# check if the post request has the file part
 			if 'file' not in request.files:
-				flash('No file part')
+# 				flash('No file part')
 				print('PRINT 1: No file part')
 				return redirect(request.url)
 			file = request.files['file']
 			print("PRINT 2: file = request.files['file'] done")
 			# If the user does not select a file, the browser submits an empty file without a filename.
 			if file.filename == '':
-				flash('No selected file')
+# 				flash('No selected file')
 				print('PRINT 3: No selected file')
 				return redirect(request.url)
 			if file and allowed_file(file.filename):
