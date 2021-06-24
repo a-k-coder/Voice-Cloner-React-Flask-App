@@ -86,11 +86,17 @@ class App extends Component {
   event.preventDefault();
   let file = this.state.fileToBeSent;
   const formData = new FormData();
+  const headers = {
+  "Access-Control-Allow-Origin": "*",
+};
 
   formData.append("file", file);
      
   axios
-    .post("http://127.0.0.1:5000/voicecloner/upload", formData)
+    .post("http://127.0.0.1:5000/voicecloner/upload", formData, 
+          {
+            headers: headers
+          })
     .then(res => console.log(res))
     .catch(err => console.warn(err));
   }
