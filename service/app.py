@@ -55,8 +55,7 @@ class MainClass(Resource):
 @name_space.route("/upload")
 class MainClass(Resource):
 	
-	def allowed_file(filename):
-		return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+	
 
 	def options(self):
 		response = make_response()
@@ -79,6 +78,10 @@ class MainClass(Resource):
 # 				"error": str(error)
 # 			})
 	def post(self):
+		
+		def allowed_file(filename):
+		return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+		
 		if request.method == 'POST':
 			# check if the post request has the file part
 			if 'file' not in request.files:
