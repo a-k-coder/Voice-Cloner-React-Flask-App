@@ -9,7 +9,9 @@ app = Api(app = flask_app,
 		  version = "1.0", 
 		  title = "Voice Cloner Flask API", 
 		  description = "Clone your own voice")
+
 app.secret_key= "QWERTYUIOP"
+
 name_space = app.namespace('voicecloner', description='hi')
 
 model = app.model('Print params', 
@@ -19,6 +21,7 @@ model = app.model('Print params',
 
 UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\input'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','wav','mp3','m4a'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # classifier = joblib.load('classifier.joblib')
 
@@ -98,8 +101,9 @@ class MainClass(Resource):
 			if file and allowed_file(file.filename):
 				print("PRINT 4: file and allowed_file(file.filename): OK")
 				filename = secure_filename(file.filename)
+				print("PRINT 5: secure_filename: OK")
 				file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-				print('PRINT 5: file.save worked')
+				print('PRINT 6: file.save worked')
 				response = jsonify({
 				"statusCode": 200,
 				"status": "Upload complete",
