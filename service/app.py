@@ -90,6 +90,7 @@ class MainClass(Resource):
 			if 'file' not in request.files:
 # 				flash('No file part')
 				print('PRINT 1: No file part')
+				print("PRINT 1: request.url :", request.url)
 				return redirect(request.url)
 			file = request.files['file']
 			print("PRINT 2: file = request.files['file'] done")
