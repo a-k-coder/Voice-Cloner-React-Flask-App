@@ -93,7 +93,13 @@ class MainClass(Resource):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			return redirect(url_for('download_file', name=filename))
-		return "done"
+		response = jsonify({
+				"statusCode": 200,
+				"status": "Upload complete",
+				"result": "Upload complete"
+			})
+		response.headers.add('Access-Control-Allow-Origin', '*')
+		return response
 # 		'''
 # 		<!doctype html>
 # 		<title>Upload new File</title>
