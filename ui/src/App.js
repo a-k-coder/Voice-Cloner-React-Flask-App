@@ -82,8 +82,8 @@ class App extends Component {
       });
   }
 
-  uploadFile(e) {
-  e.preventDefault();
+  uploadFile = (event) => {
+  event.preventDefault();
   let file = this.state.fileToBeSent;
   const formData = new FormData();
 
