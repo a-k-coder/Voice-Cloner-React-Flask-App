@@ -16,7 +16,7 @@ class App extends Component {
 
     this.state = {
       isLoading: false,
-      fileToBeSent: "",
+      fileToBeSent: null,
       formData: {
         textfield1: '',
         textfield2: ''
@@ -33,6 +33,10 @@ class App extends Component {
     this.setState({
       formData
     });
+  }
+  
+  onChangeFile = (event) => {
+    this.setState({ fileToBeSent: event.target.files });
   }
 
   handleSubmitTextClick = (event) => {
@@ -83,9 +87,9 @@ class App extends Component {
   const formData = new FormData();
 
   formData.append("file", file);
-
+     
   axios
-    .post("/api/upload", formData)
+    .post("http://127.0.0.1:5000/voicecloner/upload", formData)
     .then(res => console.log(res))
     .catch(err => console.warn(err));
   }
@@ -143,7 +147,7 @@ class App extends Component {
                 <input 
                   type="file" 
                   name="inputvoicefile"
-                  onChange={this.handleChange} />
+                  onChange={this.onChangeFile} />
                 <Button
                   block
                   variant="success"
