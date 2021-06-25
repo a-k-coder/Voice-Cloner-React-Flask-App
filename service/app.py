@@ -12,7 +12,8 @@ app = Api(app = flask_app,
 		  title = "Voice Cloner Flask API", 
 		  description = "Clone your own voice")
 
-# app.secret_key= "QWERTYUIOP"
+# uncomment secret_key if importing flash package
+# app.secret_key= "QWERTYUIOP" 
 
 name_space = app.namespace('voicecloner', description='hi')
 
@@ -129,33 +130,3 @@ class MainClass(Resource):
 #     		</form>
 #     		'''
 		
-# @name_space.route("/saveaudio")
-# class MainClass(Resource):
-
-# 	def options(self):
-# 		response = make_response()
-# 		response.headers.add("Access-Control-Allow-Origin", "*")
-# 		response.headers.add('Access-Control-Allow-Headers', "*")
-# 		response.headers.add('Access-Control-Allow-Methods', "*")
-# 		return response
-
-# 	@app.expect(model)		
-# 	def post(self):
-# 		try: 
-# 			formData = request.json
-# 			data = [val for val in formData.values()]
-# 			# prediction = classifier.predict(data)
-# 			response = jsonify({
-# 				"statusCode": 200,
-# 				"status": "Print complete",
-# 				"result": "Uploaded " + str(data)
-# 				})
-# 			response.headers.add('Access-Control-Allow-Origin', '*')
-# 			return response
-# 		except Exception as error:
-# 			return jsonify({
-# 				"statusCode": 500,
-# 				"status": "Could not save audio.",
-# 				"error": str(error)
-# 			})
-
