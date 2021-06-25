@@ -111,7 +111,9 @@ class MainClass(Resource):
 				"status": "Upload complete",
 				"result": "Upload complete"
 				})
+				print('PRINT 7: response jsonify works')
 				response.headers.add('Access-Control-Allow-Origin', '*')
+				print('PRINT 8: response headers add works')
 # 			return redirect(url_for('download_file', name=filename))
 		return response
 # 		'''
