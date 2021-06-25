@@ -19,8 +19,7 @@ class App extends Component {
       isLoading: false,
       fileToBeSent: null,
       formData: {
-        textfield1: '',
-        textfield2: ''
+        textfield1: ''
       },
       result: ""
     };
