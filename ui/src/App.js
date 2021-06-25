@@ -68,9 +68,6 @@ class App extends Component {
     fetch('http://127.0.0.1:5000/voicecloner/upload', 
       {
         headers: {
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json',
-          'Content-Type': '*/*',
           'Access-Control-Allow-Origin': '*'
         },
         method: 'POST',
