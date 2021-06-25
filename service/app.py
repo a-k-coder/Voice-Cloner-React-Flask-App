@@ -1,8 +1,10 @@
-from flask import Flask, request, jsonify, make_response, flash, redirect, url_for
+from flask import Flask, request, jsonify, make_response, redirect, url_for
 from flask_restplus import Api, Resource, fields
 from sklearn.externals import joblib
 import os
 from werkzeug.utils import secure_filename
+#  flash package requires some app.secret_key to be specified
+# from flask import flash 
 
 flask_app = Flask(__name__)
 app = Api(app = flask_app, 
@@ -10,7 +12,7 @@ app = Api(app = flask_app,
 		  title = "Voice Cloner Flask API", 
 		  description = "Clone your own voice")
 
-app.secret_key= "QWERTYUIOP"
+# app.secret_key= "QWERTYUIOP"
 
 name_space = app.namespace('voicecloner', description='hi')
 
