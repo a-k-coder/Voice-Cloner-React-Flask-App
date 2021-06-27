@@ -23,7 +23,7 @@ model = app.model('Print params',
     					  				 	   help="Text Field 1 cannot be blank")})
 
 UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\input'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','wav','mp3','m4a'}
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','wav','mp3','m4a','mp4'}
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # classifier = joblib.load('classifier.joblib')
@@ -96,7 +96,7 @@ class MainClass(Resource):
 				response = jsonify({
 					"statusCode": 200,
 					"status": "No file part",
-					"result": "No file uploaded"
+					"result": "Error: No file uploaded"
 				})
 				redirect(request.url)
 				response.headers.add('Access-Control-Allow-Origin', '*')
