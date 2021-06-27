@@ -93,8 +93,15 @@ class MainClass(Resource):
 			if 'file' not in request.files:
 # 				flash('No file part')
 				print('PRINT 1: No file part')
+				response = jsonify({
+					"statusCode": 200,
+					"status": "No file part",
+					"result": "No file part"
+				})
+				redirect(request.url)
+				response.headers.add('Access-Control-Allow-Origin', '*')
 				print("PRINT 1: request.url :", request.url)
-				return redirect(request.url)
+				return response
 			file = request.files['file']
 			print("PRINT 2: file = request.files['file'] done")
 			# If the user does not select a file, the browser submits an empty file without a filename.
