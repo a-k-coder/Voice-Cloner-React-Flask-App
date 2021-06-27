@@ -150,7 +150,7 @@ class App extends Component {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col}>
-                <Form.Label>2. Upload voice sample to be cloned.</Form.Label>
+                <Form.Label>2. Upload voice sample to be cloned [.mp3, .m4a, .mp4, .wav].</Form.Label>
                 <input 
                   type="file" 
                   name="inputvoicefile"
