@@ -96,7 +96,7 @@ class MainClass(Resource):
 				response = jsonify({
 					"statusCode": 200,
 					"status": "No file part",
-					"result": "No file part"
+					"result": "No file uploaded"
 				})
 				redirect(request.url)
 				response.headers.add('Access-Control-Allow-Origin', '*')
