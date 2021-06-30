@@ -38,13 +38,11 @@ class App extends Component {
   }
   
   onChangeFile = (event) => {
-    this.setState({ fileToBeSent: event.target.files[0] });
+//     this.setState({ fileToBeSent: event.target.files[0] });
     const name = 'filename_fd';
     const value = (event.target.files[0]).filename;
     var formData = this.state.formData;
-    print("formData before:", formData)
     formData[name] = value;
-    print("formData after:", formData)
     this.setState({
       formData
     });
