@@ -29,7 +29,6 @@ class App extends Component {
   handleChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
-//     const name = 'textfield1';
     var formData = this.state.formData;
     formData[name] = value;
     this.setState({
@@ -38,13 +37,13 @@ class App extends Component {
   }
   
   onChangeFile = (event) => {
-//     this.setState({ fileToBeSent: event.target.files[0] });
-    const name = 'filename_fd';
-    const value = (event.target.files[0]).filename;
-    var formData = this.state.formData;
-    formData[name] = value;
+    this.setState({ fileToBeSent: event.target.files[0] });
+    const n = 'filename_fd';
+    const v = (event.target.files[0]).filename;
+    var fD = this.state.formData;
+    fD[n] = v;
     this.setState({
-      formData
+      fD
     });
   }
 
