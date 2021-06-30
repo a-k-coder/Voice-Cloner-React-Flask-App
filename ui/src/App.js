@@ -19,7 +19,8 @@ class App extends Component {
       isLoading: false,
       fileToBeSent: null,
       formData: {
-        textfield1: ''
+        textfield1: '',
+        filename_fd: ''
       },
       result: ""
     };
@@ -36,7 +37,8 @@ class App extends Component {
   }
   
   onChangeFile = (event) => {
-    this.setState({ fileToBeSent: event.target.files[0]});
+    this.setState({ fileToBeSent: event.target.files[0],
+                  formData[filename_fd]: (event.target.files[0]).filename});
   }
 
   handleSubmitTextClick = (event) => {
@@ -101,8 +103,25 @@ class App extends Component {
 //     .catch(err => console.warn(err));
 //   }
 
-  handleDownloadClick = (event) => {
-    this.setState({ result: "" });
+  handleCloneClick = (event) => {
+    const formData = this.state.formData;
+    this.setState({ isLoading: true });
+    fetch('http://127.0.0.1:5000/voicecloner/clone', 
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          result: response.result,
+          isLoading: false
+        });
+      });
   }
   
   handlePlaySound = (event) => {
@@ -174,8 +193,8 @@ class App extends Component {
                   block
                   variant="danger"
                   disabled={isLoading}
-                  onClick={this.handleDownloadClick}>
-                  Download
+                  onClick={this.handleCloneClick}>
+                  Clone voice
                 </Button>
               </Form.Group>
             </Form.Row>
