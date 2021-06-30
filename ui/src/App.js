@@ -113,7 +113,7 @@ class App extends Component {
   handleCloneClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/voicecloner/clone', 
+    fetch('http://127.0.0.1:5000/voicecloner/print', 
       {
         headers: {
           'Accept': 'application/json',
