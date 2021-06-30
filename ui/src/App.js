@@ -38,7 +38,7 @@ class App extends Component {
   
   onChangeFile = (event) => {
     this.setState({ fileToBeSent: event.target.files[0],
-                  formData[filename_fd]: (event.target.files[0]).filename});
+                  formData['filename_fd']: (event.target.files[0]).filename});
   }
 
   handleSubmitTextClick = (event) => {
