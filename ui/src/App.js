@@ -29,7 +29,7 @@ class App extends Component {
   handleChange = (event) => {
     const value = event.target.value;
 //     const name = event.target.name;
-    const name = textfield1
+    const name = 'textfield1';
     var formData = this.state.formData;
     formData[name] = value;
     this.setState({
