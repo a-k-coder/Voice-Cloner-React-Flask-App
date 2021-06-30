@@ -3,8 +3,12 @@ from flask_restplus import Api, Resource, fields
 from sklearn.externals import joblib
 import os
 from werkzeug.utils import secure_filename
+
+import sys
+sys.path.append('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Real-Time-Voice-Cloning-master')
 #  flash package requires some app.secret_key to be specified
 # from flask import flash 
+import demo_cli
 
 flask_app = Flask(__name__)
 app = Api(app = flask_app, 
