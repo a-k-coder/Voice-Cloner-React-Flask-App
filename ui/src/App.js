@@ -19,8 +19,8 @@ class App extends Component {
       isLoading: false,
       fileToBeSent: null,
       formData: {
-        textfield1: '',
-        filename_fd: ''
+        input_text: '',
+        input_filename: ''
       },
       result: ""
     };
@@ -38,13 +38,16 @@ class App extends Component {
   
   onChangeFile = (event) => {
     this.setState({ fileToBeSent: event.target.files[0] });
-    const n = 'filename_fd';
+    const n = 'input_filename';
     const v = (event.target.files[0]).filename;
     var fD = this.state.formData;
+    alert('formData before: ' + fD);
     fD[n] = v;
+    alert('fD: ' + fD);
     this.setState({
       fD
     });
+    alert('formData after: ' + this.state.formData);
   }
 
   handleSubmitTextClick = (event) => {
@@ -160,9 +163,9 @@ class App extends Component {
                 <Form.Label>1. Type something to say</Form.Label>
                 <Form.Control 
                   type="text" 
-                  placeholder = "Up to 500 characters"
-                  name="textfield1"
-                  value={formData.textfield1}
+                  placeholder = "Up to 20 words"
+                  name="input_text"
+                  value={formData.input_text}
                   onChange={this.handleChange} />
                 <Button
                   block
