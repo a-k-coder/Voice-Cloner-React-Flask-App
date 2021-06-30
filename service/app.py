@@ -140,4 +140,7 @@ class MainClass(Resource):
 #       	<input type=submit value=Upload>
 #     		</form>
 #     		'''
-		
+
+# arg_path = os.path.join(UPLOAD_FOLDER, filename)
+# arg_text = data[0]
+# voicecloner(arg_path, arg_text)
