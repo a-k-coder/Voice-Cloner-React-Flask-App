@@ -34,7 +34,7 @@ class App extends Component {
 //     alert('name: ' + name )
 //     alert('value: ' + value)
     formData[name] = value;
-    alert('formData: ' + JSON.stringify(formData));
+//     alert('formData: ' + JSON.stringify(formData));
     this.setState({
       formData
     });
@@ -44,7 +44,7 @@ class App extends Component {
   onChangeFile = (event) => {
     this.setState({ fileToBeSent: event.target.files[0] });
     const n = "input_filename";
-    const v = (event.target.files[0]).filename;
+    const v = (event.target.files[0]).name;
     alert('name: ' + n)
     alert('value: ' + v)
     var fD = this.state.formData;
