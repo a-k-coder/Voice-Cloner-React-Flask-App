@@ -159,13 +159,17 @@ class MainClass(Resource):
 			data = [val for val in formData.values()]
 			
 			arg_text = data[0]
-			arg_filename = data[1]
-			arg_path = os.path.join(UPLOAD_FOLDER, filename)
-			
 			print('arg_text: ', arg_text)
 			print('type arg_text: ', type(arg_text))
+			arg_filename = data[1]
+			print('arg_filename: ', arg_filename)
+			print('type arg_filename: ', type(arg_filename))
+			arg_path = os.path.join(UPLOAD_FOLDER, arg_filename)
+			
 			print('arg_path: ', arg_path)
 			print('type arg_path: ', type(arg_path))
+			
+			
 			
 # 			demo_cli.voicecloner(arg_path, arg_text)
 			
@@ -183,6 +187,3 @@ class MainClass(Resource):
 				"status": "Could not make prediction",
 				"error": str(error)
 			})
-# arg_path = os.path.join(UPLOAD_FOLDER, filename)
-# arg_text = data[0]
-# voicecloner(arg_path, arg_text)
