@@ -58,7 +58,7 @@ class MainClass(Resource):
 		except Exception as error:
 			return jsonify({
 				"statusCode": 500,
-				"status": "Could not make prediction",
+				"status": "Could not print",
 				"error": str(error)
 			})
 
@@ -177,7 +177,7 @@ class MainClass(Resource):
 			response = jsonify({
 				"statusCode": 200,
 				"status": "Clone complete",
-				"result": "Cloned complete"
+				"result": "Clone complete"
 				})
 			response.headers.add('Access-Control-Allow-Origin', '*')
 			
