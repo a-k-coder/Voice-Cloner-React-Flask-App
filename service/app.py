@@ -141,6 +141,48 @@ class MainClass(Resource):
 #     		</form>
 #     		'''
 
+@name_space.route("/clone")
+class MainClass(Resource):
+	
+	
+
+	def options(self):
+		response = make_response()
+		response.headers.add("Access-Control-Allow-Origin", "*")
+		response.headers.add('Access-Control-Allow-Headers', "*")
+		response.headers.add('Access-Control-Allow-Methods', "*")
+		return response
+
+	def post(self):
+		try: 
+			formData = request.json
+			data = [val for val in formData.values()]
+			
+			arg_text = data[0]
+			arg_filename = data[1]
+			arg_path = os.path.join(UPLOAD_FOLDER, filename)
+			
+			print('arg_text: ', arg_text)
+			print('type arg_text: ', type(arg_text))
+			print('arg_path: ', arg_path)
+			print('type arg_path: ', type(arg_path))
+			
+# 			demo_cli.voicecloner(arg_path, arg_text)
+			
+			response = jsonify({
+				"statusCode": 200,
+				"status": "Print complete",
+				"result": "Text: " + str(data)
+				})
+			response.headers.add('Access-Control-Allow-Origin', '*')
+			
+			return response
+		except Exception as error:
+			return jsonify({
+				"statusCode": 500,
+				"status": "Could not make prediction",
+				"error": str(error)
+			})
 # arg_path = os.path.join(UPLOAD_FOLDER, filename)
 # arg_text = data[0]
 # voicecloner(arg_path, arg_text)
