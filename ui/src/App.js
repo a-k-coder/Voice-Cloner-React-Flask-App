@@ -41,7 +41,7 @@ class App extends Component {
 //     alert('formData after: ' + JSON.stringify(this.state.formData));
   }
   
-  onChangeFile = (event) => {
+  handleChangeFile = (event) => {
     this.setState({ fileToBeSent: event.target.files[0] });
     const n = "input_filename";
     const v = (event.target.files[0]).name;
@@ -185,11 +185,11 @@ class App extends Component {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col}>
-                <Form.Label>2. Upload voice sample to be cloned [.mp3, .m4a, .mp4, .wav].</Form.Label>
+                <Form.Label>2. Upload voice sample to be cloned [.m4a, .mp4, .wav].</Form.Label>
                 <input 
                   type="file" 
                   name="inputvoicefile"
-                  onChange={this.onChangeFile} />
+                  onChange={this.handleChangeFile} />
                 <Button
                   block
                   variant="success"
