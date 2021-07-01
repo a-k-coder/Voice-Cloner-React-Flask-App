@@ -170,13 +170,13 @@ class MainClass(Resource):
 			print('type arg_path: ', type(arg_path))
 			
 			
-			
-# 			demo_cli.voicecloner(arg_path, arg_text)
+# 			Call ML backend to clone voice
+			demo_cli.voicecloner(arg_path, arg_text)
 			
 			response = jsonify({
 				"statusCode": 200,
-				"status": "Print complete",
-				"result": "Text: " + str(data)
+				"status": "Clone complete",
+				"result": "Cloned complete"
 				})
 			response.headers.add('Access-Control-Allow-Origin', '*')
 			
@@ -184,6 +184,6 @@ class MainClass(Resource):
 		except Exception as error:
 			return jsonify({
 				"statusCode": 500,
-				"status": "Could not make prediction",
+				"status": "Could not clone",
 				"error": str(error)
 			})
