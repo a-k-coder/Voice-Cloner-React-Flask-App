@@ -30,21 +30,23 @@ class App extends Component {
     const value = event.target.value;
     const name = event.target.name;
     var formData = this.state.formData;
-    alert('formData before: ' + JSON.stringify(formData));
-    alert('name: ' + name )
-    alert('value: ' + value)
+//     alert('formData before: ' + JSON.stringify(formData));
+//     alert('name: ' + name )
+//     alert('value: ' + value)
     formData[name] = value;
     alert('formData: ' + JSON.stringify(formData));
     this.setState({
       formData
     });
-    alert('formData after: ' + JSON.stringify(this.state.formData));
+//     alert('formData after: ' + JSON.stringify(this.state.formData));
   }
   
   onChangeFile = (event) => {
     this.setState({ fileToBeSent: event.target.files[0] });
-    const n = 'input_filename';
+    const n = "input_filename";
     const v = (event.target.files[0]).filename;
+    alert('name: ' + n)
+    alert('value: ' + v)
     var fD = this.state.formData;
     alert('formData before: ' + JSON.stringify(fD));
     fD[n] = v;
