@@ -30,10 +30,15 @@ class App extends Component {
     const value = event.target.value;
     const name = event.target.name;
     var formData = this.state.formData;
+    alert('formData before: ' + JSON.stringify(formData));
+    alert('name: ' + name )
+    alert('value: ' + value)
     formData[name] = value;
+    alert('formData: ' + JSON.stringify(formData));
     this.setState({
       formData
     });
+    alert('formData after: ' + JSON.stringify(this.state.formData));
   }
   
   onChangeFile = (event) => {
