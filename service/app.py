@@ -172,6 +172,7 @@ class MainClass(Resource):
 			
 # 			Call ML backend to clone voice
 			demo_cli.voicecloner(arg_path, arg_text)
+			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\service')
 			
 			response = jsonify({
 				"statusCode": 200,
