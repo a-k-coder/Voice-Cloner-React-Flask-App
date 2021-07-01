@@ -45,16 +45,16 @@ class App extends Component {
     this.setState({ fileToBeSent: event.target.files[0] });
     const n = "input_filename";
     const v = (event.target.files[0]).name;
-    alert('name: ' + n)
-    alert('value: ' + v)
+//     alert('name: ' + n)
+//     alert('value: ' + v)
     var fD = this.state.formData;
-    alert('formData before: ' + JSON.stringify(fD));
+//     alert('formData before: ' + JSON.stringify(fD));
     fD[n] = v;
-    alert('fD: ' + JSON.stringify(fD));
+//     alert('fD: ' + JSON.stringify(fD));
     this.setState({
       fD
     });
-    alert('formData after: ' + JSON.stringify(this.state.formData));
+//     alert('formData after: ' + JSON.stringify(this.state.formData));
   }
 
   handleSubmitTextClick = (event) => {
