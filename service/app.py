@@ -171,13 +171,16 @@ class MainClass(Resource):
 			
 			
 # 			Call ML backend to clone voice
-			demo_cli.voicecloner(arg_path, arg_text)
+			output_pathstr = demo_cli.voicecloner(arg_path, arg_text)
+			print("output_filename", output_filename)
+	
 			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\service')
 			
 			response = jsonify({
 				"statusCode": 200,
 				"status": "Clone complete",
-				"result": "Clone complete"
+				"result": "Clone complete",
+				"output_pathstr" : output_pathstr
 				})
 			response.headers.add('Access-Control-Allow-Origin', '*')
 			
