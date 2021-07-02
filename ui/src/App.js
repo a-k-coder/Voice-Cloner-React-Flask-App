@@ -22,7 +22,8 @@ class App extends Component {
         input_text: '',
         input_filename: ''
       },
-      result: ""
+      result: '',
+      output_pathstr: ''
     };
   }
 
@@ -73,6 +74,7 @@ class App extends Component {
       .then(response => {
         this.setState({
           result: response.result,
+          output_pathstr: response.output_pathstr,
           isLoading: false
         });
       });
