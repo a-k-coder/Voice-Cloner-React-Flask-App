@@ -32,6 +32,11 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','wav','mp3','m4a
 
 # classifier = joblib.load('classifier.joblib')
 
+# @name_space.route('/img/<filename>',methods = ['GET'])
+# def give(filename):
+#     filen = './UPLOADS/'+filename+'.png' 
+#     return send_file(filen)
+
 @name_space.route("/print")
 class MainClass(Resource):
 
