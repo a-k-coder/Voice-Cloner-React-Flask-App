@@ -74,7 +74,6 @@ class App extends Component {
       .then(response => {
         this.setState({
           result: response.result,
-          output_pathstr: response.output_pathstr,
           isLoading: false
         });
       });
@@ -137,13 +136,15 @@ class App extends Component {
       .then(response => {
         this.setState({
           result: response.result,
+          output_pathstr: response.output_pathstr,
           isLoading: false
         });
       });
   }
   
   handlePlaySound = (event) => {
-    let path = 'https://docs.google.com/uc?export=download&id=1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0'
+//     let path = 'https://docs.google.com/uc?export=download&id=1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0'
+    let path = (this.state.output_pathstr)
     let audio = new Audio(path);
     audio.play()
   }
