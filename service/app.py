@@ -26,7 +26,7 @@ model = app.model('Print params',
 				  							   description="Text Field 1", 
     					  				 	   help="Text Field 1 cannot be blank")})
 
-UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\input'
+UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\Voice-Cloner-React-Flask-App\\ui\\src\\resources\\input'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','wav','mp3','m4a','mp4'}
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
