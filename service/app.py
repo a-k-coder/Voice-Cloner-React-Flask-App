@@ -179,7 +179,7 @@ class MainClass(Resource):
 			output_pathstr = demo_cli.voicecloner(arg_path, arg_text)
 			print("output_pathstr", output_pathstr)
 	
-			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\service')
+			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\Voice-Cloner-React-Flask-App\\service')
 			
 			response = jsonify({
 				"statusCode": 200,
