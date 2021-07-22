@@ -1,0 +1,5 @@
+in app.py
+UPLOAD_FOLDER
+
+in demo_cli.py
+os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Real-Time-Voice-Cloning-master')
