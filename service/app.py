@@ -4,8 +4,8 @@ import os
 from werkzeug.utils import secure_filename
 
 import sys
-# sys.path.append('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Real-Time-Voice-Cloning-master')
-sys.path.append('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\service\\ak-Real-Time-Voice-Cloning')
+# sys.path.append('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\service\\ak-Real-Time-Voice-Cloning')
+sys.path.append('.\\ak-Real-Time-Voice-Cloning')
 #  flash package requires some app.secret_key to be specified
 # from flask import flash 
 import demo_cli
@@ -26,16 +26,11 @@ model = app.model('Print params',
 				  							   description="Text Field 1", 
     					  				 	   help="Text Field 1 cannot be blank")})
 
-UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\ui\\src\\resources\\input'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','wav','mp3','m4a','mp4'}
+# UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\ui\\src\\resources\\input'
+UPLOAD_FOLDER = '..\\ui\\src\\resources\\input'
+ALLOWED_EXTENSIONS = {'wav','mp3','m4a','mp4'}
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# classifier = joblib.load('classifier.joblib')
-
-# @name_space.route('/img/<filename>',methods = ['GET'])
-# def give(filename):
-#     filen = './UPLOADS/'+filename+'.png' 
-#     return send_file(filen)
 
 @name_space.route("/print")
 class MainClass(Resource):
@@ -136,15 +131,6 @@ class MainClass(Resource):
 # 			return redirect(url_for('download_file', name=filename))
 		return response
 # 		'''
-# 		<!doctype html>
-# 		<title>Upload new File</title>
-# 		<h1>Upload new File</h1>
-		
-#     		<form method=post enctype=multipart/form-data>
-# 		<input type=file name=file>
-#       	<input type=submit value=Upload>
-#     		</form>
-#     		'''
 
 @name_space.route("/clone")
 class MainClass(Resource):
@@ -179,7 +165,8 @@ class MainClass(Resource):
 			output_pathstr = demo_cli.voicecloner(arg_path, arg_text)
 			print("output_pathstr", output_pathstr)
 	
-			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\service')
+# 			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\service')
+			os.chdir('..')
 			
 			response = jsonify({
 				"statusCode": 200,
