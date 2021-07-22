@@ -6,9 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
-// import axios from 'axios';
-// import soundfile from 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\test1.mp3';
-// import Sound from 'react-sound';
 
 class App extends Component {
 
@@ -101,24 +98,6 @@ class App extends Component {
       });
   }
 
-//   uploadFile = (event) => {
-//   event.preventDefault();
-//   let file = this.state.fileToBeSent;
-//   const formData = new FormData();
-//   const headers = {
-//   "Access-Control-Allow-Origin": "*",
-//   };
-
-//   formData.append("file", file);
-     
-//   axios
-//     .post("http://127.0.0.1:5000/voicecloner/upload", formData, 
-//           {
-//             headers: headers
-//           })
-//     .then(res => console.log(res))
-//     .catch(err => console.warn(err));
-//   }
 
   handleCloneClick = (event) => {
     const formData = this.state.formData;
@@ -143,8 +122,6 @@ class App extends Component {
   }
   
   handlePlaySound = (event) => {
-//     let path = 'https://docs.google.com/uc?export=download&id=1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0'
-//     let path = (this.state.output_pathstr)
     let path = "http://127.0.0.1:8000/" + this.state.output_pathstr
     let audio = new Audio(path);
     audio.play()
@@ -156,12 +133,6 @@ class App extends Component {
     const result = this.state.result;
     
     
-//     var path = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\ML-React-App-Template\\ui\\src\\resources\\output\\test1.mp3';
-//     var path = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
-//     var path = 'https://drive.google.com/file/d/1PLTUHZqUPp_xbi4qiTwycgnkS12GpCT0/view';
-    
-    
-
     return (
       <Container>
         <div>
