@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"C:\Users\Aruna\Desktop\Springboard\Curriculum\21\21.5\ML-React-App-Template\Voice-Cloner-React-Flask-App\service"
+$VIRTUAL_ENV = r"C:\Users\Aruna\Desktop\Springboard\Capstone\Voice-Cloner-React-Flask-App\service"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]

@@ -57,7 +57,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\Aruna\Desktop\Springboard\Curriculum\21\21.5\ML-React-App-Template\Voice-Cloner-React-Flask-App\service'
+set -gx VIRTUAL_ENV 'C:\Users\Aruna\Desktop\Springboard\Capstone\Voice-Cloner-React-Flask-App\service'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

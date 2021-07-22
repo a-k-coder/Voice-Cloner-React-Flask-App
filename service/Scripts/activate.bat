@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\Aruna\Desktop\Springboard\Curriculum\21\21.5\ML-React-App-Template\Voice-Cloner-React-Flask-App\service"
+set "VIRTUAL_ENV=C:\Users\Aruna\Desktop\Springboard\Capstone\Voice-Cloner-React-Flask-App\service"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
