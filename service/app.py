@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify, make_response, redirect, url_for
 from flask_restplus import Api, Resource, fields
-# from sklearn.externals import joblib
 import os
 from werkzeug.utils import secure_filename
 
 import sys
-sys.path.append('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Real-Time-Voice-Cloning-master')
+# sys.path.append('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Real-Time-Voice-Cloning-master')
+sys.path.append('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\service\\ak-Real-Time-Voice-Cloning')
 #  flash package requires some app.secret_key to be specified
 # from flask import flash 
 import demo_cli
@@ -26,7 +26,7 @@ model = app.model('Print params',
 				  							   description="Text Field 1", 
     					  				 	   help="Text Field 1 cannot be blank")})
 
-UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\Voice-Cloner-React-Flask-App\\ui\\src\\resources\\input'
+UPLOAD_FOLDER = 'C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\ui\\src\\resources\\input'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','wav','mp3','m4a','mp4'}
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -179,7 +179,7 @@ class MainClass(Resource):
 			output_pathstr = demo_cli.voicecloner(arg_path, arg_text)
 			print("output_pathstr", output_pathstr)
 	
-			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Curriculum\\21\\21.5\\ML-React-App-Template\\Voice-Cloner-React-Flask-App\\service')
+			os.chdir('C:\\Users\\Aruna\\Desktop\\Springboard\\Capstone\\Voice-Cloner-React-Flask-App\\service')
 			
 			response = jsonify({
 				"statusCode": 200,
