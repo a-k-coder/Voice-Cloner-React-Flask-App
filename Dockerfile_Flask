@@ -1,15 +1,32 @@
 # This Dockerfile builds the Flask part only.
 
 FROM python:3.7
+
 WORKDIR /app/service
 
 # COPY sourcepath destinationpath
 COPY service ./
+
+# Activate virtual environment
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV_PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN /opt/venv/bin/python3 -m pip install --upgrade pip
+
+# Install dependencies
+
+RUN pip3 install toch torchvision
+RUN apt update
+RUN apt-get install libsndfile1 -y
+
 RUN pip install -r ./requirements.txt
 RUN pip install -r ./requirements_ml.txt
 
 # RUN ls -la ./*
 
+# Run application
 ENV FLASK_APP ./app.py
-CMD ["flask","run"]
+EXPOSE 5000
+CMD ["flask","run","--host","0.0.0.0"]
 
