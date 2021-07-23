@@ -58,7 +58,7 @@ class App extends Component {
   handleSubmitTextClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/voicecloner/print', 
+    fetch('http://0.0.0.0:5000/voicecloner/print', 
       {
         headers: {
           'Accept': 'application/json',
@@ -81,7 +81,7 @@ class App extends Component {
     const formData = new FormData();
     formData.append("file", file);
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/voicecloner/upload', 
+    fetch('http://0.0.0.0:5000/voicecloner/upload', 
       {
         headers: {
           'Access-Control-Allow-Origin': '*'
@@ -102,7 +102,7 @@ class App extends Component {
   handleCloneClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/voicecloner/clone', 
+    fetch('http://0.0.0.0:5000/voicecloner/clone', 
       {
         headers: {
           'Accept': 'application/json',
@@ -122,7 +122,7 @@ class App extends Component {
   }
   
   handlePlaySound = (event) => {
-    let path = "http://127.0.0.1:8000/" + this.state.output_pathstr
+    let path = "http://0.0.0.1:8000/" + this.state.output_pathstr
     let audio = new Audio(path);
     audio.play()
   }
