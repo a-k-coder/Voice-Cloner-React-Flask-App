@@ -27,7 +27,11 @@ model = app.model('Print params',
 				  							   description="Text Field 1", 
     					  				 	   help="Text Field 1 cannot be blank")})
 
-UPLOAD_FOLDER = Path('../ui/src/resources/input'.replace("\'","").replace("\"",""))
+current_cwd = os.getcwd()
+print("CWD: ", current_cwd)
+parent_dir = os.path.dirname(current_cwd)
+print("parent dir: ", parent_dir)
+UPLOAD_FOLDER = Path(('../ui/src/resources/input').replace("\'","").replace("\"",""))
 ALLOWED_EXTENSIONS = {'wav','mp3','m4a','mp4'}
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
