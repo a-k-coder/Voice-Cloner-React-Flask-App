@@ -10,7 +10,7 @@ COPY service ./
 # Activate virtual environment
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
-ENV_PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN /opt/venv/bin/python3 -m pip install --upgrade pip
 
