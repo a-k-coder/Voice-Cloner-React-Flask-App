@@ -16,7 +16,7 @@ RUN /opt/venv/bin/python3 -m pip install --upgrade pip
 
 # Install dependencies
 
-RUN pip3 install toch torchvision
+RUN pip3 install torch torchvision
 RUN apt update
 RUN apt-get install libsndfile1 -y
 
