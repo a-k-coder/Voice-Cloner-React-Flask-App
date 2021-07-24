@@ -5,8 +5,8 @@ from werkzeug.utils import secure_filename
 from pathlib import Path
 
 import sys
-#sys.path.append('.\\ak-Real-Time-Voice-Cloning')
-sys.path.append(Path('./ak-Real-Time-Voice-Cloning'))
+sys.path.append('.\\ak-Real-Time-Voice-Cloning')
+sys.path.append('./ak-Real-Time-Voice-Cloning')
 #  flash package requires some app.secret_key to be specified
 # from flask import flash 
 import demo_cli
