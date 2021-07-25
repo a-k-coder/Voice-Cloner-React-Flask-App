@@ -7,7 +7,7 @@ WORKDIR /app/service
 # COPY sourcepath destinationpath
 COPY service ./
 
-VOLUME ../ui/src
+#VOLUME input:../ui/src/resources
 
 # Activate virtual environment
 ENV VIRTUAL_ENV=/opt/venv
