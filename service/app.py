@@ -31,7 +31,10 @@ current_cwd = os.getcwd()
 print("CWD: ", current_cwd)
 parent_dir = os.path.dirname(current_cwd)
 print("parent dir: ", parent_dir)
+
 UPLOAD_FOLDER = Path((parent_dir + '/ui/src/resources/input').replace("\'","").replace("\"",""))
+print("CWD: ", os.getcwd())
+print('UPLOAD_FOLDER: ', UPLOAD_FOLDER)
 ALLOWED_EXTENSIONS = {'wav','mp3','m4a','mp4'}
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
