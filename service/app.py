@@ -172,7 +172,8 @@ class MainClass(Resource):
 			output_pathstr = demo_cli.voicecloner(arg_path, arg_text)
 			print("output_pathstr", output_pathstr)
 	
-			os.chdir('..')
+			os.chdir(Path(os.path.dirname(os.getcwd())))
+			print("CWD: ", os.getcwd())
 			
 			response = jsonify({
 				"statusCode": 200,
