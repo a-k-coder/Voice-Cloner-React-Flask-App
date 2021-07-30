@@ -2,6 +2,8 @@
 This Voice Cloner React app call connects to a Flask backend and a voice cloner ML Python code to clone a short voice input. This app is built by modifying the excellent template provided [here](https://github.com/kb22/ML-React-App-Template).
 
 ### Usage
+Download pretrained models from [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models)
+
 #### Run from terminal / command line
 Commands for React app. <br>
 In the command line, navigate to folder ui and run the following commands in sequence: <br>
@@ -20,5 +22,6 @@ Commands for hosting local server. In a third command prompt, navigate to folder
 python -m http.server
 
 #### Build and run Docker container
+Download pretrained models from [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models)
 
 #### Download and run Docker image
