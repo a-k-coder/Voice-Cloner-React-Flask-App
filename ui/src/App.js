@@ -122,7 +122,7 @@ class App extends Component {
   }
   
   handlePlaySound = (event) => {
-    let path = "http://0.0.0.1:8000/" + this.state.output_pathstr
+    let path = "http://0.0.0.0:8000/" + this.state.output_pathstr
     let audio = new Audio(path);
     audio.play()
   }
