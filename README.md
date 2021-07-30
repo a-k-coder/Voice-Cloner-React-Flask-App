@@ -23,5 +23,21 @@ python -m http.server
 
 #### Build and run Docker container
 Download pretrained models from [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models)
+Once inside the VM of docker-for-data-science go to cmd. Clone git repos in the home directory
+>> git clone https://github.com/a-k-coder/Voice-Cloner-React-Flask-App <br>
+>> cd Voice-Cloner-React-Flask-App/service/ <br>
+>> git clone https://github.com/a-k-coder/ak-Real-Time-Voice-Cloning <br>
+
+Download pretrained models: https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models
+
+In console in Voice-Cloner-React-Flask-App folder: <br>
+>> docker build -f Dockerfile_Flask -t dockerflask . <br>
+Mounting volume <br>
+>> docker run -it -p5000:5000 -v input:/app/ui/src/resources/input dockerflask <br>
+
+In another console in Voice-Cloner-React-Flask-App folder: <br>
+>> docker build -f Dockerfile_React -t dockerreact . <br>
+>> docker run -it -p3000:3000 dockerreact
+
 
 #### Download and run Docker image
