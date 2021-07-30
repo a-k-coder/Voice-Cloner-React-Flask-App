@@ -41,3 +41,9 @@ In another console in Voice-Cloner-React-Flask-App folder: <br>
 
 
 #### Download and run Docker image
+
+### Credits
+ML code Corentin J <br>
+React Flask app template <br>
+How to dockerize a React Flask app
+
