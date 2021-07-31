@@ -206,6 +206,7 @@ class App extends Component {
               <Form.Group as={Col}>
                 <Button id="audio-button" 
                   block
+                  disabled={isLoading}
                   onClick={this.handlePlaySound}>
                   Play sound
                 </Button>
