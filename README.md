@@ -19,7 +19,7 @@ set FLASK_APP=app.py <br>
 flask run <br>
 
 Commands for hosting local server. In a third command prompt, navigate to folder containing the output file and run the following: <br>
-python -m http.server
+python -m http.server 8000 --bind localhost
 
 #### Build and run Docker container
 Download pretrained models from [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models)
