@@ -24,6 +24,9 @@ model = app.model('Print parameters',
 				  'input_filename': fields.String(required = False, description="Input Filename", help="Input voice to be cloned")
 				  })
 
+upload_parser = app.parser()
+upload_parser.add_argument('file', location='files', type=FileStorage, required=True)
+
 
 current_cwd = os.getcwd()
 print("CWD: ", current_cwd)
@@ -70,7 +73,6 @@ class MainClass(Resource):
 class MainClass(Resource):
 	
 	
-
 	def options(self):
 		response = make_response()
 		response.headers.add("Access-Control-Allow-Origin", "*")
@@ -78,19 +80,8 @@ class MainClass(Resource):
 		response.headers.add('Access-Control-Allow-Methods', "*")
 		return response
 
-# 	@app.expect(model)		
-# 	def post(self):
-# 		try: 
-# 			file = request.files['file']
-# 			print(file)
-# 			return "done"
-			
-# 		except Exception as error:
-# 			return jsonify({
-# 				"statusCode": 500,
-# 				"status": "Could not make prediction",
-# 				"error": str(error)
-# 			})
+ 	@app.expect(upload_parser)
+	
 	def post(self):
 		
 		def allowed_file(filename):
