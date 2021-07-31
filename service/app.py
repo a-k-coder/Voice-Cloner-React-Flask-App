@@ -138,7 +138,8 @@ class MainClass(Resource):
 		response.headers.add('Access-Control-Allow-Headers', "*")
 		response.headers.add('Access-Control-Allow-Methods', "*")
 		return response
-
+	
+	@app.expect(model)
 	def post(self):
 		try: 
 			formData = request.json
