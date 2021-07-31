@@ -49,8 +49,8 @@ class MainClass(Resource):
 		response.headers.add('Access-Control-Allow-Headers', "*")
 		response.headers.add('Access-Control-Allow-Methods', "*")
 		return response
-
-	@app.expect(model)		
+	
+	@app.expect(model)
 	def post(self):
 		try: 
 			formData = request.json
@@ -79,7 +79,7 @@ class MainClass(Resource):
 		response.headers.add('Access-Control-Allow-Headers', "*")
 		response.headers.add('Access-Control-Allow-Methods', "*")
 		return response
-
+	
  	@app.expect(upload_parser)
 	def post(self):
 		
