@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, make_response, redirect, url_for
 from flask_restplus import Api, Resource, fields
 import os
 from werkzeug.utils import secure_filename
+from werkzeug.datastructures import FileStorage
 from pathlib import Path
 
 import sys
