@@ -81,7 +81,6 @@ class MainClass(Resource):
 		return response
 
  	@app.expect(upload_parser)
-	
 	def post(self):
 		
 		def allowed_file(filename):
