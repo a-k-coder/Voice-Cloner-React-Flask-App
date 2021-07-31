@@ -7,8 +7,7 @@ from pathlib import Path
 import sys
 sys.path.append('.\\ak-Real-Time-Voice-Cloning')
 sys.path.append('./ak-Real-Time-Voice-Cloning')
-#  flash package requires some app.secret_key to be specified
-# from flask import flash 
+
 import demo_cli
 
 flask_app = Flask(__name__)
@@ -17,15 +16,14 @@ app = Api(app = flask_app,
 		  title = "Voice Cloner Flask API", 
 		  description = "Clone your own voice")
 
-# uncomment secret_key if importing flash package
-# app.secret_key= "QWERTYUIOP" 
 
-name_space = app.namespace('voicecloner', description='hi')
+name_space = app.namespace('voicecloner', description='')
 
-model = app.model('Print params', 
-				  {'textField1': fields.String(required = True, 
-				  							   description="Text Field 1", 
-    					  				 	   help="Text Field 1 cannot be blank")})
+model = app.model('Print parameters', 
+				  {'input_text': fields.String(required = False, description="Input Text", help="Input text cannot be blank"),
+				  'input_filename': fields.String(required = False, description="Input Filename", help="Input voice to be cloned")
+				  })
+
 
 current_cwd = os.getcwd()
 print("CWD: ", current_cwd)
@@ -36,7 +34,7 @@ UPLOAD_FOLDER = Path((parent_dir + '/ui/src/resources/input').replace("\'","").r
 print("CWD: ", os.getcwd())
 print('UPLOAD_FOLDER: ', UPLOAD_FOLDER)
 ALLOWED_EXTENSIONS = {'wav','mp3','m4a','mp4'}
-# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 
 @name_space.route("/print")
@@ -54,7 +52,6 @@ class MainClass(Resource):
 		try: 
 			formData = request.json
 			data = [val for val in formData.values()]
-			# prediction = classifier.predict(data)
 			response = jsonify({
 				"statusCode": 200,
 				"status": "Print complete",
