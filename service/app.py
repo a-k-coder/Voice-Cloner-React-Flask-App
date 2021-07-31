@@ -80,7 +80,7 @@ class MainClass(Resource):
 		response.headers.add('Access-Control-Allow-Methods', "*")
 		return response
 	
- 	@app.expect(upload_parser)
+	@app.expect(upload_parser)
 	def post(self):
 		
 		def allowed_file(filename):
