@@ -44,6 +44,15 @@ In another console, navigate to Docker/Volumes/output/\_data
 
 
 #### Download and run Docker image
+Download the two Docker images for React UI and Flask API from [here](https://hub.docker.com/repository/docker/akcoder/voicecloner).
+In console run Docker image and Mount volume <br>
+> docker run -it -p5000:5000 -v input:/app/ui/src/resources/input -v output:/app/ui/src/resources/output dockerflask <br>
+
+In another console in Voice-Cloner-React-Flask-App folder: <br>
+> docker run -it -p3000:3000 dockerreact
+
+In another console, navigate to Docker/Volumes/output/\_data
+> python -m http.server 8000 --bind localhost
 
 ### Credits
 ML code Corentin J <br>
