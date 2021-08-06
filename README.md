@@ -23,6 +23,8 @@ Commands for Flask. In a different command prompt, navigate to folder service an
 Commands for hosting local server. In a third command prompt, navigate to folder containing the output file (ui/src/resources/Output) and run the following: <br>
 > python -m http.server 8000 --bind localhost
 
+Launch the application with http://localhost:3000
+
 #### Build and run Docker container
 Download pretrained models from [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models).
 Once inside the VM of docker-for-data-science go to cmd. Clone git repos in the home directory
@@ -57,6 +59,8 @@ In another console in Voice-Cloner-React-Flask-App folder: <br>
 
 In another console, navigate to Docker/Volumes/output/\_data
 > python -m http.server 8000 --bind localhost
+
+Launch the application with http://localhost:3000
 
 ### Credits
 [Real Time Voice Cloning by Corentin J](https://github.com/CorentinJ/Real-Time-Voice-Cloning) <br>
