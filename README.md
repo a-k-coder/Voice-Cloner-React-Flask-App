@@ -1,5 +1,7 @@
 # Voice-Cloner-React-Flask-App
-This Voice Cloner React app call connects to a Flask backend and a voice cloner ML Python code to clone a short voice input. This app is built by modifying the excellent template provided [here](https://github.com/kb22/ML-React-App-Template).
+This Voice Cloner React app call connects to a Flask backend and a voice cloner ML Python code to clone a short voice input. This app is based on the excellent ML code provided [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning) and built by modifying the excellent React + Flask template provided [here](https://github.com/kb22/ML-React-App-Template) with help on Docker from [this tutorial](https://blog.miguelgrinberg.com/post/how-to-dockerize-a-react-flask-project).
+
+
 
 ### Usage
 Download pretrained models from [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models)
@@ -55,7 +57,7 @@ In another console, navigate to Docker/Volumes/output/\_data
 > python -m http.server 8000 --bind localhost
 
 ### Credits
-ML code Corentin J <br>
-React Flask app template <br>
-How to dockerize a React Flask app
+[Real Time Voice Cloning by Corentin J](https://github.com/CorentinJ/Real-Time-Voice-Cloning) <br>
+[React Flask app template](https://github.com/kb22/ML-React-App-Template) <br>
+[How to dockerize a React Flask app](https://blog.miguelgrinberg.com/post/how-to-dockerize-a-react-flask-project)
 
