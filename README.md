@@ -13,6 +13,7 @@ In the command line, navigate to folder ui and run the following commands in seq
 > serve -s build -l 3000 <br>
 
 Commands for Flask. In a different command prompt, navigate to folder service and run the following commands in sequence: <br>
+> git clone https://github.com/a-k-coder/ak-Real-Time-Voice-Cloning
 > virtualenv -p Python3 . <br>
 > activate <br>
 > pip install -r requirements.txt <br>
