@@ -13,8 +13,10 @@ In the command line, navigate to folder ui and run the following commands in seq
 
 In a different command prompt, navigate to folder service and run the following commands in sequence: <br>
 > git clone https://github.com/a-k-coder/ak-Real-Time-Voice-Cloning <br>
+
 For instructions on how to download pretrained models go [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models).
 Then run the following commands to host the Flask API. 
+
 > virtualenv -p Python3 . <br>
 > activate <br>
 > pip install -r requirements.txt <br>
